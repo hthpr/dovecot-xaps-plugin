@@ -60,8 +60,6 @@ static bool xaps_plugin_begin_txn(struct push_notification_driver_txn *dtxn) {
             eventMessagenewConfig = p_new(dtxn->ptxn->pool, struct push_notification_event_messagenew_config, 1);
             // Take what you can, give nothing back
             eventMessagenewConfig->flags = PUSH_NOTIFICATION_MESSAGE_HDR_DATE |
-                            PUSH_NOTIFICATION_MESSAGE_HDR_FROM |
-                            PUSH_NOTIFICATION_MESSAGE_HDR_TO |
                             PUSH_NOTIFICATION_MESSAGE_HDR_SUBJECT |
                             PUSH_NOTIFICATION_MESSAGE_BODY_SNIPPET;
             push_notification_event_init(dtxn, "MessageNew", eventMessagenewConfig);
@@ -69,8 +67,6 @@ static bool xaps_plugin_begin_txn(struct push_notification_driver_txn *dtxn) {
             eventMessageappendConfig = p_new(dtxn->ptxn->pool, struct push_notification_event_messageappend_config, 1);
             // Take what you can, give nothing back
             eventMessageappendConfig->flags = PUSH_NOTIFICATION_MESSAGE_HDR_DATE |
-                            PUSH_NOTIFICATION_MESSAGE_HDR_FROM |
-                            PUSH_NOTIFICATION_MESSAGE_HDR_TO |
                             PUSH_NOTIFICATION_MESSAGE_HDR_SUBJECT |
                             PUSH_NOTIFICATION_MESSAGE_BODY_SNIPPET;
             push_notification_event_init(dtxn, "MessageAppend", eventMessageappendConfig);
